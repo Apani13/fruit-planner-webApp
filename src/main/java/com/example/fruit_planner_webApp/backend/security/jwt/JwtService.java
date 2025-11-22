@@ -1,4 +1,4 @@
-package com.example.fruit_planner_webApp.jwt;
+package com.example.fruit_planner_webApp.backend.security.jwt;
 
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;

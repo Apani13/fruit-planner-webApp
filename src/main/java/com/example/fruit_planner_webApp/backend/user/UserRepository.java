@@ -1,4 +1,4 @@
-package com.example.fruit_planner_webApp.user;
+package com.example.fruit_planner_webApp.backend.user;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 

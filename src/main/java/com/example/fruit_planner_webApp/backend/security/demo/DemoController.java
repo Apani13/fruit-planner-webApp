@@ -1,4 +1,4 @@
-package com.example.fruit_planner_webApp.demo;
+package com.example.fruit_planner_webApp.backend.security.demo;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.PostMapping;

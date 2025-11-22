@@ -1,9 +1,9 @@
-package com.example.fruit_planner_webApp.auth;
+package com.example.fruit_planner_webApp.backend.security.auth;
 
-import com.example.fruit_planner_webApp.jwt.JwtService;
-import com.example.fruit_planner_webApp.user.Role;
-import com.example.fruit_planner_webApp.user.User;
-import com.example.fruit_planner_webApp.user.UserRepository;
+import com.example.fruit_planner_webApp.backend.security.jwt.JwtService;
+import com.example.fruit_planner_webApp.backend.user.User;
+import com.example.fruit_planner_webApp.backend.user.Role;
+import com.example.fruit_planner_webApp.backend.user.UserRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;

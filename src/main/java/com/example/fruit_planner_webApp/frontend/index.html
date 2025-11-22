@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Seasonal Fruit Planner 98</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div id="appContainer">
+
+    <!-- Barra superior / “menú” (solo se ve tras login) -->
+    <div id="topBar" class="top-bar" style="display:none;">
+        <span class="top-bar-title">Seasonal Fruit Planner 98</span>
+        <button id="navFruitBtn" class="btn btn-top">Catálogo de frutas</button>
+        <button id="navPlannerBtn" class="btn btn-top">Plan semanal</button>
+        <button id="logoutBtn" class="btn btn-top btn-danger">Cerrar sesión</button>
+    </div>
+
+    <!-- PANTALLA 1: LOGIN -->
+    <div id="loginScreen" class="screen">
+        <div class="window">
+            <div class="window-title-bar">
+                <span class="window-title">Login — Fruit Planner 98</span>
+            </div>
+            <div class="window-content">
+
+                <fieldset class="fieldset">
+                    <legend>Identificación de usuario</legend>
+
+                    <table class="form-table">
+                        <tr>
+                            <td><label for="usernameInput">Usuario:</label></td>
+                            <td><input type="text" id="usernameInput" class="input-text"></td>
+                        </tr>
+                        <tr>
+                            <td><label for="passwordInput">Contraseña:</label></td>
+                            <td><input type="password" id="passwordInput" class="input-text"></td>
+                        </tr>
+                    </table>
+
+                    <div class="button-row">
+                        <button id="loginBtn" class="btn btn-primary">Login</button>
+                    </div>
+
+                    <div id="loginMessage" class="status-message"></div>
+                </fieldset>
+
+                <div class="hint-box">
+                    <b>Consejo:</b> Introduce tu usuario y contraseña para acceder al catálogo de frutas.
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- PANTALLA 2: CATÁLOGO DE FRUTAS -->
+    <div id="fruitScreen" class="screen" style="display:none;">
+        <div class="window">
+            <div class="window-title-bar">
+                <span class="window-title">Catálogo de Frutas — Fruit Planner 98</span>
+            </div>
+            <div class="window-content">
+
+                <fieldset class="fieldset">
+                    <legend>Filtro por mes</legend>
+
+                    <table class="form-table">
+                        <tr>
+                            <td><label for="monthSelect">Mes:</label></td>
+                            <td>
+                                <select id="monthSelect" class="select-month">
+                                    <option value="1">Enero</option>
+                                    <option value="2">Febrero</option>
+                                    <option value="3">Marzo</option>
+                                    <option value="4">Abril</option>
+                                    <option value="5">Mayo</option>
+                                    <option value="6">Junio</option>
+                                    <option value="7">Julio</option>
+                                    <option value="8">Agosto</option>
+                                    <option value="9">Septiembre</option>
+                                    <option value="10">Octubre</option>
+                                    <option value="11">Noviembre</option>
+                                    <option value="12">Diciembre</option>
+                                </select>
+                            </td>
+                            <td>
+                                <button id="loadFruitsBtn" class="btn btn-primary">Cargar frutas</button>
+                            </td>
+                        </tr>
+                    </table>
+
+                    <div id="fruitStatusMessage" class="status-message"></div>
+                </fieldset>
+
+                <fieldset class="fieldset">
+                    <legend>Frutas en temporada</legend>
+
+                    <table class="fruit-table fruit-table-season">
+                        <thead>
+                        <tr>
+                            <th>Nombre</th>
+                            <th>Temporada</th>
+                            <th>Precio €/kg</th>
+                            <th>Descripción</th>
+                            <th>Acción</th>
+                        </tr>
+                        </thead>
+                        <tbody id="seasonalFruitsBody">
+                        <!-- Filas generadas por JS -->
+                        </tbody>
+                    </table>
+                </fieldset>
+
+                <fieldset class="fieldset">
+                    <legend>Frutas fuera de temporada</legend>
+
+                    <table class="fruit-table fruit-table-offseason">
+                        <thead>
+                        <tr>
+                            <th>Nombre</th>
+                            <th>Temporada</th>
+                            <th>Precio €/kg</th>
+                            <th>Descripción</th>
+                            <th>Acción</th>
+                        </tr>
+                        </thead>
+                        <tbody id="offSeasonFruitsBody">
+                        <!-- Filas generadas por JS -->
+                        </tbody>
+                    </table>
+                </fieldset>
+
+                <div class="button-row">
+                    <button id="goToPlannerFromFruits" class="btn">Ver plan semanal</button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- PANTALLA 3: WEEKLY FRUIT INTAKE PLANNER -->
+    <div id="plannerScreen" class="screen" style="display:none;">
+        <div class="window">
+            <div class="window-title-bar">
+                <span class="window-title">Weekly Fruit Intake Planner — Fruit Planner 98</span>
+            </div>
+            <div class="window-content">
+
+                <fieldset class="fieldset">
+                    <legend>Plan semanal de frutas</legend>
+
+                    <table class="fruit-table">
+                        <thead>
+                        <tr>
+                            <th>Nombre</th>
+                            <th>Cantidad semanal (piezas)</th>
+                            <th>Acción</th>
+                        </tr>
+                        </thead>
+                        <tbody id="plannerTableBody">
+                        <!-- Filas del plan generadas por JS -->
+                        </tbody>
+                    </table>
+
+                    <div class="planner-footer">
+                        <div class="planner-total">
+                            Total piezas por semana:
+                            <span id="totalPieces">0</span>
+                        </div>
+                        <div id="goalMessage" class="goal-message">
+                            <!-- Mensaje de objetivo -->
+                        </div>
+                    </div>
+                </fieldset>
+
+                <div class="button-row">
+                    <button id="backToFruitsBtn" class="btn">Volver al catálogo</button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>

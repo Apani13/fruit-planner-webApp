@@ -1,6 +1,6 @@
-package com.example.fruit_planner_webApp.config;
+package com.example.fruit_planner_webApp.backend.security.config;
 
-import com.example.fruit_planner_webApp.user.UserRepository;
+import com.example.fruit_planner_webApp.backend.user.UserRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

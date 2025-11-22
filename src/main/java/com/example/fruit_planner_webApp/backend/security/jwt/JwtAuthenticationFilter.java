@@ -1,4 +1,4 @@
-package com.example.fruit_planner_webApp.jwt;
+package com.example.fruit_planner_webApp.backend.security.jwt;
 
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;

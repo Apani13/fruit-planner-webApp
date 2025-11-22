@@ -1,0 +1,252 @@
+/* === General === */
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #008080; /* clásico fondo teal */
+    font-family: Tahoma, Verdana, Arial, sans-serif;
+    font-size: 12px;
+    color: #000000;
+}
+
+#appContainer {
+    padding: 20px;
+}
+
+/* === Top bar === */
+
+.top-bar {
+    background-color: #c0c0c0;
+    border-top: 2px solid #ffffff;
+    border-left: 2px solid #ffffff;
+    border-right: 2px solid #808080;
+    border-bottom: 2px solid #808080;
+    padding: 4px 6px;
+    margin-bottom: 10px;
+}
+
+.top-bar-title {
+    font-weight: bold;
+    margin-right: 20px;
+}
+
+/* === Windows 98 style window === */
+
+.window {
+    width: 760px;
+    margin: 0 auto;
+    background-color: #c0c0c0;
+    border-top: 2px solid #ffffff;
+    border-left: 2px solid #ffffff;
+    border-right: 2px solid #404040;
+    border-bottom: 2px solid #404040;
+    box-shadow: 2px 2px 0px #000000;
+}
+
+.window-title-bar {
+    background: linear-gradient(to right, #000080, #1084d0);
+    color: #ffffff;
+    padding: 4px 6px;
+    display: block;
+}
+
+.window-title {
+    font-weight: bold;
+    font-size: 12px;
+}
+
+.window-content {
+    padding: 10px;
+}
+
+/* === Screens === */
+
+.screen {
+    /* visibility control with JS */
+}
+
+/* === Fieldsets === */
+
+.fieldset {
+    border: 2px groove #ffffff;
+    padding: 8px 10px 10px 10px;
+    margin-bottom: 12px;
+    background-color: #dcdcdc;
+}
+
+.fieldset legend {
+    padding: 0 4px;
+    font-weight: bold;
+}
+
+/* === Forms === */
+
+.form-table {
+    border-collapse: collapse;
+}
+
+.form-table td {
+    padding: 4px 6px;
+}
+
+.input-text {
+    width: 180px;
+    padding: 2px;
+    border-top: 2px solid #ffffff;
+    border-left: 2px solid #ffffff;
+    border-right: 2px solid #808080;
+    border-bottom: 2px solid #808080;
+    background-color: #ffffff;
+    font-family: inherit;
+    font-size: 12px;
+}
+
+.select-month {
+    padding: 2px;
+    border-top: 2px solid #ffffff;
+    border-left: 2px solid #ffffff;
+    border-right: 2px solid #808080;
+    border-bottom: 2px solid #808080;
+    background-color: #ffffff;
+    font-family: inherit;
+    font-size: 12px;
+}
+
+/* === Buttons === */
+
+.btn {
+    padding: 2px 10px;
+    margin: 2px;
+    border-top: 2px solid #ffffff;
+    border-left: 2px solid #ffffff;
+    border-right: 2px solid #404040;
+    border-bottom: 2px solid #404040;
+    background-color: #c0c0c0;
+    font-family: inherit;
+    font-size: 12px;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background-color: #dcdcdc;
+}
+
+.btn:active {
+    border-top: 2px solid #404040;
+    border-left: 2px solid #404040;
+    border-right: 2px solid #ffffff;
+    border-bottom: 2px solid #ffffff;
+    background-color: #a0a0a0;
+}
+
+.btn-primary {
+    background-color: #e0e0ff;
+}
+
+.btn-danger {
+    background-color: #ffcccc;
+}
+
+.btn-top {
+    font-size: 11px;
+}
+
+/* === Tables === */
+
+.fruit-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 4px;
+    background-color: #ffffff;
+}
+
+.fruit-table th,
+.fruit-table td {
+    border: 1px solid #808080;
+    padding: 4px;
+    text-align: left;
+}
+
+.fruit-table th {
+    background-color: #000080;
+    color: #ffffff;
+    font-weight: bold;
+}
+
+/* Colores de temporada / fuera de temporada */
+
+.fruit-table-season {
+    background-color: #e5ffe5;
+}
+
+.fruit-table-offseason {
+    background-color: #eeeeee;
+}
+
+/* === Status and hint === */
+
+.status-message {
+    margin-top: 6px;
+    min-height: 16px;
+    color: #000000;
+}
+
+.status-error {
+    color: #800000;
+    font-weight: bold;
+}
+
+.status-success {
+    color: #006400;
+    font-weight: bold;
+}
+
+.hint-box {
+    margin-top: 8px;
+    padding: 6px;
+    background-color: #ffffe0;
+    border-top: 2px solid #ffffff;
+    border-left: 2px solid #ffffff;
+    border-right: 2px solid #808080;
+    border-bottom: 2px solid #808080;
+}
+
+/* === Buttons row === */
+
+.button-row {
+    margin-top: 8px;
+}
+
+/* === Planner footer === */
+
+.planner-footer {
+    margin-top: 8px;
+    padding-top: 4px;
+    border-top: 1px solid #808080;
+}
+
+.planner-total {
+    font-weight: bold;
+    margin-bottom: 4px;
+}
+
+.goal-message {
+    padding: 4px;
+    border-top: 2px solid #ffffff;
+    border-left: 2px solid #ffffff;
+    border-right: 2px solid #808080;
+    border-bottom: 2px solid #808080;
+    background-color: #f0f0f0;
+}
+
+.goal-ok {
+    background-color: #e5ffe5;
+    color: #006400;
+    font-weight: bold;
+}
+
+.goal-warning {
+    background-color: #fff8c0;
+    color: #805500;
+    font-weight: bold;
+}
