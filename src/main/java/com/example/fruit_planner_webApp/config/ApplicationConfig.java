@@ -1,7 +1,6 @@
 package com.example.fruit_planner_webApp.config;
 
 import com.example.fruit_planner_webApp.user.UserRepository;
-import lombok.AllArgsConstructor;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
