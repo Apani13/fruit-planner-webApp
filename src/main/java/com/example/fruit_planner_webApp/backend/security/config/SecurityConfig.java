@@ -22,20 +22,31 @@ public class SecurityConfig {
 
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
-        return http
+
+        http
+                .cors(cors -> {})
                 .csrf(csrf -> csrf.disable())
-                .authorizeHttpRequests(authRequest ->
-                        authRequest
-                                .requestMatchers("/auth/**").permitAll()
-                                .requestMatchers(HttpMethod.GET, "/fruits/**").hasAnyRole("USER", "ADMIN")
-                                .requestMatchers("/fruits/**").hasRole("ADMIN")
-                                .anyRequest().authenticated()
+
+                .authorizeHttpRequests(auth -> auth
+                        .requestMatchers(HttpMethod.OPTIONS, "/**").permitAll()   // necesario para preflight CORS
+
+                        .requestMatchers("/auth/**").permitAll()   // login y register sin token
+
+                        .requestMatchers(HttpMethod.GET, "/fruits/**").hasAnyRole("USER", "ADMIN")
+
+                        .requestMatchers("/fruits/**").hasRole("ADMIN")
+
+                        .anyRequest().authenticated()
                 )
-                .sessionManagement(sessionManager -> sessionManager
+
+                .sessionManagement(session -> session
                         .sessionCreationPolicy(SessionCreationPolicy.STATELESS))
+
                 .authenticationProvider(authProvider)
-                .addFilterBefore(jwtAuthenticationFilter, UsernamePasswordAuthenticationFilter.class)
-                .build();
+
+                .addFilterBefore(jwtAuthenticationFilter, UsernamePasswordAuthenticationFilter.class);
+
+        return http.build();
     }
 
 }

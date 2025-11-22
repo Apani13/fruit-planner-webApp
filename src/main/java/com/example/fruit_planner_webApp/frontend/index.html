@@ -9,9 +9,9 @@
 
 <div id="appContainer">
 
-    <!-- Barra superior / “menú” (solo se ve tras login) -->
+    <!-- Barra superior / “menú” -->
     <div id="topBar" class="top-bar" style="display:none;">
-        <span class="top-bar-title">Seasonal Fruit Planner 98</span>
+        <span class="top-bar-title">🍇 Seasonal Fruit Planner 98</span>
         <button id="navFruitBtn" class="btn btn-top">Catálogo de frutas</button>
         <button id="navPlannerBtn" class="btn btn-top">Plan semanal</button>
         <button id="logoutBtn" class="btn btn-top btn-danger">Cerrar sesión</button>
@@ -19,11 +19,19 @@
 
     <!-- PANTALLA 1: LOGIN -->
     <div id="loginScreen" class="screen">
-        <div class="window">
+        <div class="window window-auth">
             <div class="window-title-bar">
-                <span class="window-title">Login — Fruit Planner 98</span>
+                <span class="window-title">🔑 Login — Fruit Planner 98</span>
             </div>
             <div class="window-content">
+
+                <div class="intro-box">
+                    <span class="intro-title">Bienvenida a Fruit Planner 98</span>
+                    <p class="intro-text">
+                        Planifica tu consumo de fruta semanal con vibes de Windows 98
+                        y colores pastel. Inicia sesión o crea una cuenta nueva para empezar. 🍓
+                    </p>
+                </div>
 
                 <fieldset class="fieldset">
                     <legend>Identificación de usuario</legend>
@@ -43,12 +51,54 @@
                         <button id="loginBtn" class="btn btn-primary">Login</button>
                     </div>
 
+                    <div class="button-row small-text">
+                        ¿Todavía no tienes cuenta?
+                        <button id="goToRegisterBtn" class="btn btn-link">Crear cuenta</button>
+                    </div>
+
                     <div id="loginMessage" class="status-message"></div>
                 </fieldset>
 
-                <div class="hint-box">
-                    <b>Consejo:</b> Introduce tu usuario y contraseña para acceder al catálogo de frutas.
+            </div>
+        </div>
+    </div>
+
+    <!-- PANTALLA 1.5: REGISTER -->
+    <div id="registerScreen" class="screen" style="display:none;">
+        <div class="window window-auth">
+            <div class="window-title-bar">
+                <span class="window-title">💾 Crear cuenta — Fruit Planner 98</span>
+            </div>
+            <div class="window-content">
+
+                <div class="intro-box">
+                    <span class="intro-title">Crear nueva cuenta</span>
+                    <p class="intro-text">
+                        Elige un usuario y una contraseña para guardar tus planes de fruta.
+                    </p>
                 </div>
+
+                <fieldset class="fieldset">
+                    <legend>Nuevo usuario</legend>
+
+                    <table class="form-table">
+                        <tr>
+                            <td><label for="regUsernameInput">Usuario:</label></td>
+                            <td><input type="text" id="regUsernameInput" class="input-text"></td>
+                        </tr>
+                        <tr>
+                            <td><label for="regPasswordInput">Contraseña:</label></td>
+                            <td><input type="password" id="regPasswordInput" class="input-text"></td>
+                        </tr>
+                    </table>
+
+                    <div class="button-row">
+                        <button id="registerBtn" class="btn btn-primary">Crear cuenta ✨</button>
+                        <button id="backToLoginBtn" class="btn">Volver a login</button>
+                    </div>
+
+                    <div id="registerMessage" class="status-message"></div>
+                </fieldset>
 
             </div>
         </div>
@@ -58,7 +108,7 @@
     <div id="fruitScreen" class="screen" style="display:none;">
         <div class="window">
             <div class="window-title-bar">
-                <span class="window-title">Catálogo de Frutas — Fruit Planner 98</span>
+                <span class="window-title">🍊 Catálogo de Frutas — Fruit Planner 98</span>
             </div>
             <div class="window-content">
 
@@ -99,6 +149,7 @@
                     <table class="fruit-table fruit-table-season">
                         <thead>
                         <tr>
+                            <th>Imagen</th>
                             <th>Nombre</th>
                             <th>Temporada</th>
                             <th>Precio €/kg</th>
@@ -106,9 +157,7 @@
                             <th>Acción</th>
                         </tr>
                         </thead>
-                        <tbody id="seasonalFruitsBody">
-                        <!-- Filas generadas por JS -->
-                        </tbody>
+                        <tbody id="seasonalFruitsBody"></tbody>
                     </table>
                 </fieldset>
 
@@ -118,6 +167,7 @@
                     <table class="fruit-table fruit-table-offseason">
                         <thead>
                         <tr>
+                            <th>Imagen</th>
                             <th>Nombre</th>
                             <th>Temporada</th>
                             <th>Precio €/kg</th>
@@ -125,14 +175,12 @@
                             <th>Acción</th>
                         </tr>
                         </thead>
-                        <tbody id="offSeasonFruitsBody">
-                        <!-- Filas generadas por JS -->
-                        </tbody>
+                        <tbody id="offSeasonFruitsBody"></tbody>
                     </table>
                 </fieldset>
 
                 <div class="button-row">
-                    <button id="goToPlannerFromFruits" class="btn">Ver plan semanal</button>
+                    <button id="goToPlannerFromFruits" class="btn btn-secondary">Ver plan semanal</button>
                 </div>
 
             </div>
@@ -143,7 +191,7 @@
     <div id="plannerScreen" class="screen" style="display:none;">
         <div class="window">
             <div class="window-title-bar">
-                <span class="window-title">Weekly Fruit Intake Planner — Fruit Planner 98</span>
+                <span class="window-title">📅 Weekly Fruit Intake Planner — Fruit Planner 98</span>
             </div>
             <div class="window-content">
 
@@ -153,24 +201,30 @@
                     <table class="fruit-table">
                         <thead>
                         <tr>
+                            <th>Imagen</th>
                             <th>Nombre</th>
                             <th>Cantidad semanal (piezas)</th>
                             <th>Acción</th>
                         </tr>
                         </thead>
-                        <tbody id="plannerTableBody">
-                        <!-- Filas del plan generadas por JS -->
-                        </tbody>
+                        <tbody id="plannerTableBody"></tbody>
                     </table>
 
                     <div class="planner-footer">
                         <div class="planner-total">
-                            Total piezas por semana:
-                            <span id="totalPieces">0</span>
+                            Total piezas por semana: <span id="totalPieces">0</span>
                         </div>
-                        <div id="goalMessage" class="goal-message">
-                            <!-- Mensaje de objetivo -->
+
+                        <div class="planner-progress-container">
+                            <div class="planner-progress-bar">
+                                <div id="progressFill" class="planner-progress-fill"></div>
+                            </div>
+                            <div id="progressLabel" class="planner-progress-label">
+                                Empieza a añadir fruta para ver tu progreso 🍎
+                            </div>
                         </div>
+
+                        <div id="goalMessage" class="goal-message"></div>
                     </div>
                 </fieldset>
 
@@ -187,3 +241,4 @@
 <script src="app.js"></script>
 </body>
 </html>
+

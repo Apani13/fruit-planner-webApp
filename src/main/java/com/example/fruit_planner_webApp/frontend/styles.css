@@ -3,51 +3,57 @@
 body {
     margin: 0;
     padding: 0;
-    background-color: #008080; /* clásico fondo teal */
+    background: linear-gradient(135deg, #008080 0%, #355c7d 40%, #6c5b7b 100%);
     font-family: Tahoma, Verdana, Arial, sans-serif;
     font-size: 12px;
     color: #000000;
 }
 
 #appContainer {
-    padding: 20px;
+    padding: 24px;
 }
 
 /* === Top bar === */
 
 .top-bar {
-    background-color: #c0c0c0;
+    background-color: #c0c0d8;
     border-top: 2px solid #ffffff;
     border-left: 2px solid #ffffff;
     border-right: 2px solid #808080;
     border-bottom: 2px solid #808080;
     padding: 4px 6px;
-    margin-bottom: 10px;
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
 }
 
 .top-bar-title {
     font-weight: bold;
-    margin-right: 20px;
+    margin-right: 18px;
 }
 
 /* === Windows 98 style window === */
 
 .window {
-    width: 760px;
-    margin: 0 auto;
-    background-color: #c0c0c0;
+    max-width: 840px;
+    margin: 0 auto 20px auto;
+    background-color: #dcdcf5;
     border-top: 2px solid #ffffff;
     border-left: 2px solid #ffffff;
     border-right: 2px solid #404040;
     border-bottom: 2px solid #404040;
-    box-shadow: 2px 2px 0px #000000;
+    box-shadow: 3px 3px 0px #000000;
+}
+
+.window-auth {
+    max-width: 520px;
 }
 
 .window-title-bar {
-    background: linear-gradient(to right, #000080, #1084d0);
+    background: linear-gradient(to right, #000080, #3060c0);
     color: #ffffff;
-    padding: 4px 6px;
-    display: block;
+    padding: 4px 8px;
 }
 
 .window-title {
@@ -56,13 +62,13 @@ body {
 }
 
 .window-content {
-    padding: 10px;
+    padding: 12px;
 }
 
 /* === Screens === */
 
 .screen {
-    /* visibility control with JS */
+    margin-top: 16px;
 }
 
 /* === Fieldsets === */
@@ -71,12 +77,35 @@ body {
     border: 2px groove #ffffff;
     padding: 8px 10px 10px 10px;
     margin-bottom: 12px;
-    background-color: #dcdcdc;
+    background-color: #f4f4ff;
 }
 
 .fieldset legend {
     padding: 0 4px;
     font-weight: bold;
+}
+
+/* === Intro box === */
+
+.intro-box {
+    border-top: 2px solid #ffffff;
+    border-left: 2px solid #ffffff;
+    border-right: 2px solid #808080;
+    border-bottom: 2px solid #808080;
+    background-color: #ffeefc;
+    padding: 8px;
+    margin-bottom: 10px;
+}
+
+.intro-title {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 4px;
+}
+
+.intro-text {
+    margin: 0;
+    font-size: 11px;
 }
 
 /* === Forms === */
@@ -140,7 +169,11 @@ body {
 }
 
 .btn-primary {
-    background-color: #e0e0ff;
+    background-color: #e0d6ff;
+}
+
+.btn-secondary {
+    background-color: #e0ffe7;
 }
 
 .btn-danger {
@@ -149,6 +182,19 @@ body {
 
 .btn-top {
     font-size: 11px;
+}
+
+.btn-link {
+    background-color: transparent;
+    border: none;
+    margin: 0 0 0 4px;
+    text-decoration: underline;
+    padding: 0;
+}
+
+.btn-link:hover {
+    background-color: transparent;
+    text-decoration: none;
 }
 
 /* === Tables === */
@@ -171,6 +217,15 @@ body {
     background-color: #000080;
     color: #ffffff;
     font-weight: bold;
+    font-size: 11px;
+}
+
+.fruit-table tr:nth-child(even) {
+    background-color: #f7f7ff;
+}
+
+.fruit-table tr:hover {
+    background-color: #f0f0ff;
 }
 
 /* Colores de temporada / fuera de temporada */
@@ -180,7 +235,25 @@ body {
 }
 
 .fruit-table-offseason {
-    background-color: #eeeeee;
+    background-color: #f3f3f3;
+}
+
+/* === Fruit images / emojis === */
+
+.fruit-img-cell {
+    width: 56px;
+    text-align: center;
+}
+
+.fruit-icon {
+    width: 40px;
+    height: 40px;
+    object-fit: contain;
+    image-rendering: pixelated;
+}
+
+.fruit-emoji {
+    font-size: 24px;
 }
 
 /* === Status and hint === */
@@ -189,6 +262,7 @@ body {
     margin-top: 6px;
     min-height: 16px;
     color: #000000;
+    font-size: 11px;
 }
 
 .status-error {
@@ -201,34 +275,69 @@ body {
     font-weight: bold;
 }
 
-.hint-box {
-    margin-top: 8px;
-    padding: 6px;
-    background-color: #ffffe0;
-    border-top: 2px solid #ffffff;
-    border-left: 2px solid #ffffff;
-    border-right: 2px solid #808080;
-    border-bottom: 2px solid #808080;
-}
-
 /* === Buttons row === */
 
 .button-row {
     margin-top: 8px;
 }
 
+.small-text {
+    font-size: 11px;
+}
+
 /* === Planner footer === */
 
 .planner-footer {
     margin-top: 8px;
-    padding-top: 4px;
+    padding-top: 6px;
     border-top: 1px solid #808080;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
 }
 
 .planner-total {
     font-weight: bold;
-    margin-bottom: 4px;
+    margin-bottom: 2px;
 }
+
+/* Barra de progreso retro */
+
+.planner-progress-container {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.planner-progress-bar {
+    width: 100%;
+    height: 16px;
+    border-top: 2px solid #ffffff;
+    border-left: 2px solid #ffffff;
+    border-right: 2px solid #808080;
+    border-bottom: 2px solid #808080;
+    background-color: #e2e2ff;
+    overflow: hidden;
+}
+
+.planner-progress-fill {
+    height: 100%;
+    width: 0%;
+    background: repeating-linear-gradient(
+            -45deg,
+            #8fd19e,
+            #8fd19e 6px,
+            #6eb87f 6px,
+            #6eb87f 12px
+    );
+    transition: width 0.3s ease-out;
+}
+
+.planner-progress-label {
+    font-size: 11px;
+}
+
+/* Mensajes de objetivo */
 
 .goal-message {
     padding: 4px;
@@ -237,6 +346,7 @@ body {
     border-right: 2px solid #808080;
     border-bottom: 2px solid #808080;
     background-color: #f0f0f0;
+    font-size: 11px;
 }
 
 .goal-ok {
@@ -248,5 +358,11 @@ body {
 .goal-warning {
     background-color: #fff8c0;
     color: #805500;
+    font-weight: bold;
+}
+
+.goal-low {
+    background-color: #ffe0e0;
+    color: #8b0000;
     font-weight: bold;
 }
